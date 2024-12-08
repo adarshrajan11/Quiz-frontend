@@ -7,9 +7,11 @@ import {
   Container,
   createTheme,
   ThemeProvider,
+  keyframes,
 } from "@mui/material";
 import loginBg from "../assets/login-bg.avif";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/my-logo.png";
 
 const theme = createTheme({
   components: {
@@ -37,7 +39,20 @@ const theme = createTheme({
     },
   },
 });
-
+const pulseAnimation = keyframes`
+  0% {
+    transform: scale(1);
+    background-color: #3f51b5;
+  }
+  50% {
+    transform: scale(1.1);
+    background-color: #f50057;
+  }
+  100% {
+    transform: scale(1);
+    background-color: #3f51b5;
+  }
+`;
 const LoginPage = () => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const navigate = useNavigate();
@@ -60,32 +75,32 @@ const LoginPage = () => {
     <ThemeProvider theme={theme}>
       <Container
         maxWidth={false}
+        disableGutters
         sx={{
           backgroundImage: `url(${loginBg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          paddingLeft: "0px",
           minHeight: "100vh",
           width: "100%",
           overflow: "hidden",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
         }}
       >
         <Box
           sx={{
-            mt: 8,
             display: "flex",
             flexDirection: "column",
             backgroundColor: "rgba(255, 255, 255, 0.5)",
-            alignItems: "center",
+            alignItems: "flex-start",
+            justifyContent: "flex-start",
+            height: "100vh",
 
             padding: 4,
             borderRadius: 2,
-            boxShadow: 10,
           }}
         >
-          <Typography variant="h4" component="h1" gutterBottom>
+          <Typography sx={{ mt: 40 }} variant="h4" component="h1" gutterBottom>
             Login
           </Typography>
           <Box
@@ -121,6 +136,38 @@ const LoginPage = () => {
               Login
             </Button>
           </Box>
+        </Box>
+        <Box
+          sx={{
+            width: "200px",
+            height: "200px",
+            margin: "auto",
+            mt: 50,
+            backgroundColor: "#3f51b5",
+            borderRadius: "16px",
+            animation: `${pulseAnimation} 2s infinite ease-in-out`,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "white",
+            fontWeight: "bold",
+            fontSize: "1.2rem",
+          }}
+        >
+          <Box
+            component="img"
+            src={logo}
+            alt="Sample Image"
+            sx={{
+              width: "100%", // Adjust width
+              maxWidth: "400px", // Limit maximum width
+              height: "auto", // Maintain aspect ratio
+              borderRadius: "16px", // Rounded corners
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Shadow effect
+              margin: "20px auto", // Center alignment
+              display: "block", // Align as block element
+            }}
+          />
         </Box>
       </Container>
     </ThemeProvider>
