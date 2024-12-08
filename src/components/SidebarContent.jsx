@@ -13,7 +13,7 @@ const SidebarContent = () => (
   <Box sx={{ width: 240 }}>
     <Box sx={{ padding: 2 }}>
       <Typography variant="h6" component="div" gutterBottom>
-        App Name
+        Frontquiz
       </Typography>
     </Box>
     <List>

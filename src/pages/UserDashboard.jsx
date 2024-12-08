@@ -57,9 +57,9 @@ const UserDashboard = () => {
           marginTop: { xs: "64px", sm: 0 }, // Adjust for AppBar height
         }}
       >
-        <Typography variant="h4" gutterBottom>
+        {/* <Typography variant="h4" gutterBottom>
           Welcome to the Quiz Dashboard
-        </Typography>
+        </Typography> */}
 
         {/* Statistics Grid2 */}
         <Grid2 container spacing={3} sx={{ mt: 2 }}>

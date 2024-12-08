@@ -13,6 +13,9 @@ import loginBg from "../assets/login-bg.avif";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/my-logo.png";
 
+import AnimatedText from "../components/AnimatedText";
+import { motion } from "framer-motion";
+
 const theme = createTheme({
   components: {
     MuiTextField: {
@@ -139,35 +142,55 @@ const LoginPage = () => {
         </Box>
         <Box
           sx={{
-            width: "200px",
-            height: "200px",
-            margin: "auto",
-            mt: 50,
-            backgroundColor: "#3f51b5",
-            borderRadius: "16px",
-            animation: `${pulseAnimation} 2s infinite ease-in-out`,
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "white",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
+            flexDirection: "column",
           }}
         >
           <Box
-            component="img"
-            src={logo}
-            alt="Sample Image"
             sx={{
-              width: "100%", // Adjust width
-              maxWidth: "400px", // Limit maximum width
-              height: "auto", // Maintain aspect ratio
-              borderRadius: "16px", // Rounded corners
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Shadow effect
-              margin: "20px auto", // Center alignment
-              display: "block", // Align as block element
+              textAlign: "center",
+              marginTop: "50px",
+              height: "100px",
+              ml: 15,
+              display: "flex",
+              flexDirection: "column",
             }}
-          />
+          >
+            <AnimatedText text="Welcome to the FrontQuiz!" />
+            <AnimatedText text=" A user-friendly quiz platform designed to help with frontend interview preparation." />
+          </Box>
+          <Box
+            sx={{
+              width: "200px",
+              height: "200px",
+              margin: "auto",
+              ml: 80,
+
+              backgroundColor: "#3f51b5",
+              borderRadius: "16px",
+              animation: `${pulseAnimation} 2s infinite ease-in-out`,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "white",
+              fontWeight: "bold",
+              fontSize: "1.2rem",
+            }}
+          >
+            <Box
+              component="img"
+              src={logo}
+              alt="Sample Image"
+              sx={{
+                width: "100%", // Adjust width
+                maxWidth: "400px", // Limit maximum width
+                height: "auto", // Maintain aspect ratio
+                borderRadius: "16px", // Rounded corners
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Shadow effect
+                margin: "20px auto",
+              }}
+            />
+          </Box>
         </Box>
       </Container>
     </ThemeProvider>
