@@ -163,9 +163,8 @@ const LoginPage = () => {
             sx={{
               width: "200px",
               height: "200px",
-              margin: "auto",
               ml: 80,
-
+              mt: 30,
               backgroundColor: "#3f51b5",
               borderRadius: "16px",
               animation: `${pulseAnimation} 2s infinite ease-in-out`,
@@ -173,8 +172,6 @@ const LoginPage = () => {
               alignItems: "center",
               justifyContent: "center",
               color: "white",
-              fontWeight: "bold",
-              fontSize: "1.2rem",
             }}
           >
             <Box

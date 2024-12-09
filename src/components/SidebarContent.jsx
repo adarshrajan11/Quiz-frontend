@@ -17,19 +17,19 @@ const SidebarContent = () => (
       </Typography>
     </Box>
     <List>
-      <ListItem button>
+      <ListItem button={true}>
         <ListItemIcon>
           <HomeIcon />
         </ListItemIcon>
         <ListItemText primary="Home" />
       </ListItem>
-      <ListItem button>
+      <ListItem button={true}>
         <ListItemIcon>
           <InfoIcon />
         </ListItemIcon>
         <ListItemText primary="About" />
       </ListItem>
-      <ListItem button>
+      <ListItem button={true}>
         <ListItemIcon>
           <ContactMailIcon />
         </ListItemIcon>

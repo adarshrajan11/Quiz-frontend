@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+
 import { Drawer } from "@mui/material";
 import SidebarContent from "./SidebarContent";
 
@@ -8,14 +8,14 @@ const Sidebar = ({ isOpen, handleToggle }) => {
     <>
       <Drawer
         variant="permanent"
-        backgroundColor="#7091E6"
         sx={{
           display: { xs: "none", sm: "block" }, // Hide on mobile
           width: 240,
           flexShrink: 0,
           [`& .MuiDrawer-paper`]: {
-            width: 200,
+            width: 240,
             boxSizing: "border-box",
+            backgroundColor: "#fff",
           },
         }}
         open
